@@ -31,18 +31,28 @@ const limiter = rateLimit({
 
 app.use(cors({
     origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps, curl, or server-to-server)
+        if (!origin) return callback(null, true);
+        
         const allowedOrigins = [
             process.env.FRONTEND_URL,
             'http://localhost:5173',
             'http://localhost:5174'
-        ].filter(Boolean);
-        if (!origin || allowedOrigins.includes(origin)) {
+        ].filter(Boolean).map(url => url.replace(/\/$/, '')); // normalize by removing trailing slash
+
+        const normalizedOrigin = origin.replace(/\/$/, '');
+
+        // Allow exact matches or any Vercel preview/production deployment
+        if (allowedOrigins.includes(normalizedOrigin) || normalizedOrigin.endsWith('.vercel.app')) {
             callback(null, true);
         } else {
+            console.warn(`CORS blocked request from origin: ${origin}`);
             callback(new Error('Not allowed by CORS'));
         }
     },
-    credentials: true
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -75,8 +85,24 @@ const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server, {
     cors: {
-        origin: [process.env.FRONTEND_URL, 'http://localhost:5173', 'http://localhost:5174'].filter(Boolean),
-        methods: ["GET", "POST", "PUT", "DELETE"],
+        origin: function (origin, callback) {
+            if (!origin) return callback(null, true);
+            
+            const allowedOrigins = [
+                process.env.FRONTEND_URL,
+                'http://localhost:5173',
+                'http://localhost:5174'
+            ].filter(Boolean).map(url => url.replace(/\/$/, ''));
+            
+            const normalizedOrigin = origin.replace(/\/$/, '');
+
+            if (allowedOrigins.includes(normalizedOrigin) || normalizedOrigin.endsWith('.vercel.app')) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         credentials: true
     }
 });
