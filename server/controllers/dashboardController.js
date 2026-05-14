@@ -8,7 +8,7 @@ exports.getStats = async (req, res) => {
 
         if (req.user.role !== 'Admin') {
             projectFilter = `WHERE id IN (SELECT project_id FROM project_members WHERE user_id = $1)`;
-            taskFilter = `WHERE assigned_to = $1 OR created_by = $1`;
+            taskFilter = `WHERE (assigned_to = $1 OR created_by = $1)`;
             params = [req.user.id];
         }
 

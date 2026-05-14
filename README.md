@@ -171,23 +171,18 @@ VITE_API_URL=http://localhost:5000/api
 - 📅 **Calendar View**: A drag-and-drop timeline/calendar view for due dates.
 - 📧 **Email Notifications**: Automated reminders via SendGrid/AWS SES.
 - 🤝 **Team Invites**: Magic link invitations for seamless onboarding.
-
 ---
 <div align="center">
   <i>Built with ❤️ for modern software teams.</i>
 </div>
 
-
 ## 📄 License
 
 MIT 
 
-🚀 Live Demo
-Frontend Deployment
-
+## 🚀 Live Demo
+**Frontend Deployment**
 https://project-management-saas-eight.vercel.app
 
-Backend API
-
+**Backend API**
 https://project-management-saas-nknw.onrender.com 
-
