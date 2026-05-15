@@ -65,11 +65,14 @@ ProjectPro is built on a heavily decoupled **Client-Server Architecture**:
 
 ## 📸 Screenshots
 
-| Dashboard Analytics | Live Kanban Board |
-| :---: | :---: |
-| *(Add Dashboard Screenshot Here)* | *(Add Kanban Screenshot Here)* |
-| **User Management** | **Secure Login & Dark Mode** |
-| *(Add Users Screenshot Here)* | *(Add Login/Dark Mode Screenshot Here)* |
+### Login Page
+![Login Page](./screenshots/login-image.png)
+
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+### Task Management
+![Task Management](./screenshots/tasks.png)
 
 ---
 
