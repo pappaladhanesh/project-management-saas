@@ -181,6 +181,3 @@ VITE_API_URL=http://localhost:5000/api
 ## 🚀 Live Demo
 **Frontend Deployment**
 https://project-management-saas-eight.vercel.app
-
-**Backend API**
-https://project-management-saas-nknw.onrender.com 
