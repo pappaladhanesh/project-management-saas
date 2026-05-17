@@ -66,13 +66,13 @@ ProjectPro is built on a heavily decoupled **Client-Server Architecture**:
 ## 📸 Screenshots
 
 ### Login Page
-![Login Page](./screenshots/login-image.png)
+![Login Page](./screenshots/login-image.jpeg)
 
 ### Dashboard
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](./screenshots/dashboard.jpeg)
 
 ### Task Management
-![Task Management](./screenshots/tasks.png)
+![Task Management](./screenshots/tasks.jpeg)
 
 ---
 
