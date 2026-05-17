@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://img.icons8.com/color/96/000000/kanban.png" alt="ProjectPro Logo" width="80" />
   <h1>🚀 ProjectPro</h1>
   <p><strong>A Production-Ready Full-Stack SaaS Project Management Platform</strong></p>
 
