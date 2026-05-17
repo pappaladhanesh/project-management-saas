@@ -178,10 +178,6 @@ VITE_API_URL=http://localhost:5000/api
   <i>Built with ❤️ for modern software teams.</i>
 </div>
 
-## 📄 License
-
-MIT 
-
 ## 🚀 Live Demo
 **Frontend Deployment**
 https://project-management-saas-eight.vercel.app
